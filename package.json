@@ -23,6 +23,7 @@
     "@vitejs/plugin-react": "^5.0.0",
     "aws-cdk-lib": "^2.204.0",
     "constructs": "^10.4.2",
+    "cypress": "^15.0.0",
     "esbuild": "^0.25.9",
     "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.2.0",
