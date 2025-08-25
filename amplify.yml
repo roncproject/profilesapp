@@ -29,14 +29,11 @@ test:
     preTest:
       commands:
         - npm ci
-        - npm install -g pm2
-        - npm install -g wait-on
     test:
       commands:
-        - npx cypress run --reporter mochawesome --reporter-options "reportDir=test/cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"
+        - npm install -g pm2
     postTest:
       commands:
-        - npx mochawesome-merge test/cypress/report/mochawesome-report/mochawesome*.json > test/cypress/report/mochawesome.json
-        - pm2 kill
+        - npm install -g wait-on
   artifacts:
     baseDirectory: test/cypress
