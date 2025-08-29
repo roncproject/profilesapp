@@ -29,6 +29,9 @@ test:
     preTest:
       commands:
         - npm ci
+        - npm install -g pm2
+        - npx pm2 start npm -- start
+        - npm start
     test:
       commands:
         - npm install -g pm2
