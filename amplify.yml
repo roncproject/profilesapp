@@ -33,7 +33,7 @@ test:
         - npm install -g wait-on
     test:
       commands:
-        - npx cypress run
+        - 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
     postTest:
       commands:
         - pm2 kill
