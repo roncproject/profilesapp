@@ -30,13 +30,12 @@ test:
       commands:
         - npm ci
         - npm install -g pm2
-        - npx pm2 start npm -- start
-        - npm start
+        - npm install -g wait-on
     test:
       commands:
-        - npm install -g pm2
+        - npx cypress run
     postTest:
       commands:
-        - npm install -g wait-on
+        - pm2 kill
   artifacts:
     baseDirectory: test/cypress
