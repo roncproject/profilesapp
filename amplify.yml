@@ -36,9 +36,17 @@ test:
         - wait-on https://main.d1esus7hyxwmru.amplifyapp.com/
     test:
       commands:
-        - 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
+        - npx cypress install
+        - npx cypress open
+        - npx cypress run --browser chrome
+        - npx mochawesome-merge cypress/report/mochawesome-report/*.json > cypress/report/mochawesome.json
     postTest:
       commands:
         - pm2 kill
   artifacts:
     baseDirectory: test/cypress
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - .npm/**/* 
